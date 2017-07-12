@@ -7,6 +7,9 @@ ext {
     <#if configs.dependencies.onesignal??>
     oneSignalVersion = '3.+@aar'
     </#if>
+    <#if configs.dependencies.calligraphy??>
+    calligraphyVersion = '2.3.0'
+    </#if>
     <#if configs.dependencies.others??>
     <#list configs.dependencies.others>
     <#items as dependency>
@@ -38,6 +41,11 @@ dependencies {
     <#if configs.dependencies.others??>
     <#list configs.dependencies.others>
     <#items as dependency>
+
+    /* CALLIGRAPHY */
+    <#if configs.dependencies.calligraphy??>
+    compile "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+    </#if>
 
     /* ${dependency.name} */
     <#list dependency.list as dep>

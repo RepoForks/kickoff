@@ -36,7 +36,7 @@ public class FileUtils {
      */
     public static boolean extractFile(String pathFile, String dirName, boolean deleteAfter) {
         File file = new File(dirName);
-        if (!file.exists() && file.mkdir()) {
+        if (!file.exists() && file.mkdirs()) {
             System.out.println("Directory " + dirName + " created!");
             Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
             try {
