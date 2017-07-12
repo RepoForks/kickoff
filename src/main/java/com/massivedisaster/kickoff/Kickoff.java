@@ -167,8 +167,9 @@ public class Kickoff {
         cfg.setLocale(Locale.US);
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
 
+        Dependencies projectDependencies = projectConfiguration.getDependencies();
         for (File file : FileUtils.findAllFilesBasedOnAExtention(projectDirectory, ".ftl")) {
-            if (fileIsNeeded(projectConfiguration.getDependencies(), file)) {
+            if (fileIsNeeded(projectDependencies, file)) {
                 Template template = cfg.getTemplate(file.getPath());
 
                 Writer fileWriter = new FileWriter(FileUtils.newFileStripExtension(file.getAbsolutePath()));
@@ -190,6 +191,11 @@ public class Kickoff {
                     }
                 }
             }
+        }
+
+        if (projectDependencies != null && projectDependencies.getCalligraphy() != null) {
+            File fileDir = new File(folderName, "/app/src/main/assets/fonts");
+            FileUtils.extractFile(projectDependencies.getCalligraphy().getFontsPath(), fileDir.getPath(), false);
         }
     }
 

@@ -7,6 +7,7 @@ public class Dependencies {
     private String fabrickey;
     private RetrofitConfiguration retrofit;
     private OnesignalConfiguration onesignal;
+    private CalligraphyConfiguration calligraphy;
     private List<DependencyExtra> others;
     private List<String> filesToRemove;
 
@@ -20,6 +21,10 @@ public class Dependencies {
 
     public OnesignalConfiguration getOnesignal() {
         return onesignal;
+    }
+
+    public CalligraphyConfiguration getCalligraphy() {
+        return calligraphy;
     }
 
     public List<DependencyExtra> getOthers() {

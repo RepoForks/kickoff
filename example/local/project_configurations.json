@@ -1,5 +1,5 @@
 {
-  "template" : "/Users/nunosilva/Documents/Projetos/kickoff/templates/java/mobile.tar.gz",      // Mandatory
+  "template" : "templates/java/mobile.tar.gz",      // Mandatory
   "language" : "java",												                            // Mandatory
   "gradlePluginVersion" : "2.3.3",									                            // Mandatory
   "projectType" : "mobile", 										                            // Mandatory
@@ -28,6 +28,11 @@
       "prod" : "<your_prod_api_url>",
       "dev" : "<your_dev_api_url>",
       "qa" : "<your_qa_api_url>"
+    },
+    "calligraphy": {													                        // Optional
+      "fontsPath" : "templates/fonts/font.tar.gz",
+      "fontRegular" : "Roboto-Regular.ttf",
+      "fontBold" : "Roboto-Bold.ttf"
     },
     "others" : [													                            // Optional
       {
